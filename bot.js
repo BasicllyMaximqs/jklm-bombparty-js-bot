@@ -10,7 +10,6 @@ setInterval(function () {
 		console.log("Failed to create XMLHttpRequest: " + e);
 	}
 	if (xmlHttp) {
-	// 
 		xmlHttp.open('GET', 'https://api.yourdictionary.com/wordfinder/v1/wordlist?contains=' + container + '&limit=25&offset=0&order_by=score&group_by=word_length&has_definition=check&suggest_links=true&dictionary=WWF', true);
 		xmlHttp.onreadystatechange = function () {
 			if (xmlHttp.readyState == 4) {
