@@ -1,5 +1,6 @@
 setInterval(function () {
-	if (window.getComputedStyle(document.getElementsByClassName("round")[0]).display === "none") return;
+
+    if (window.getComputedStyle(document.getElementsByClassName("round")[0]).display === "none") return;
     if (window.getComputedStyle(document.getElementsByClassName("selfTurn")[0]).display === "none") return;
     let container = document.getElementsByClassName("syllable")[0].innerHTML;
     console.log("indexing new syllable: " + container)    
