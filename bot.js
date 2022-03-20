@@ -16,10 +16,10 @@ setInterval(function () {
 				console.log("Server Responded with Array obj");
 				let local_json = JSON.parse(xmlHttp.responseText);
 				
-			    let nigga_number_gen = Math.floor(Math.random() * local_json.data._groups.length);
-				let nigga_number = Math.floor(Math.random() * local_json.data._groups[nigga_number_gen]._items.length);
+			        let x_number_gen = Math.floor(Math.random() * local_json.data._groups.length);
+				let y_number = Math.floor(Math.random() * local_json.data._groups[x_number_gen]._items.length);
 				
-				let put = local_json.data._groups[nigga_number_gen]._items[nigga_number];
+				let put = local_json.data._groups[x_number_gen]._items[y_number];
 				
 				console.log("found a word: " + put);
 				console.log("autofilling");
