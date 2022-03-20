@@ -14,7 +14,7 @@ setInterval(function () {
 		xmlHttp.open('GET', 'https://api.yourdictionary.com/wordfinder/v1/wordlist?contains=' + container + '&limit=25&offset=0&order_by=score&group_by=word_length&has_definition=check&suggest_links=true&dictionary=WWF', true);
 		xmlHttp.onreadystatechange = function () {
 			if (xmlHttp.readyState == 4) {
-				console.log("Server Responded with Array obj");
+				console.log("Server Responded");
 				let local_json = JSON.parse(xmlHttp.responseText);
 				
 			        let x_number_gen = Math.floor(Math.random() * local_json.data._groups.length);
@@ -26,8 +26,9 @@ setInterval(function () {
 				console.log("autofilling");
 				wordInput.value = put;
 				
-			    const word = wordInput.value.trim();
+			        const word = wordInput.value.trim();
 				socket.emit("setWord", word, true);
+                                //stolen event from main source code in the game itself (bomb.js)
 			}
 		};
 		xmlHttp.send(null);
